@@ -53,7 +53,7 @@ public class Main {
 //                    // add to list o
 //                } else {
 //                    // add to list of rented cars
-                    Rental.addNewCar(addCar, carPrice);
+//                    Rental.addNewCar(addCar, carPrice);
 //                }
 //                CarManagement.addNewCar(addCar, carPrice);
 //
