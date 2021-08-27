@@ -19,7 +19,7 @@ public class Main {
         // STARTS HERE
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Here are the following options: \n1.add a car\n2.remove a car\n3.Lists of available cars\n4.Current rented cars");
+        System.out.println("Here are the following options: \n1.add a car to full list\n2.remove a car from full list\n3.Lists of available cars\n4.Current rented cars");
         int userOption = scanner.nextInt();
 
         switch (userOption){
@@ -49,7 +49,12 @@ public class Main {
 
 //                double carPrice = scanner.nextDouble();
 
-
+//                if(carRent.equals(Rent.AVAILABLE)){
+//                    // add to list o
+//                } else {
+//                    // add to list of rented cars
+//                    Rental.addNewCar(addCar, carPrice);
+//                }
 //                CarManagement.addNewCar(addCar, carPrice);
 //
 //                System.out.println("You've just added: ");
@@ -58,7 +63,7 @@ public class Main {
 //                System.out.println("You want to add a car");
                 break;
             case 2:
-                System.out.println("You want to remove a car");
+                System.out.println("You want to remove a car from full list");
                 break;
             case 3:
                 System.out.println("You want a list of available cars");
