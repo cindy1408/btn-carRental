@@ -40,8 +40,8 @@ public class CarManagement {
         System.out.println("You've successfully added a car into our database");
     }
 
-    public void removeCarFromCompany(Car car, List<Car> car){
-        availableCars.remove(car);
+    public void removeCarFromCompany(Car newCar, List<Car> car){
+        car.remove(newCar);
     }
 
 }
