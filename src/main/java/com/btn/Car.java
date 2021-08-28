@@ -6,14 +6,20 @@ public class Car {
     private String id;
     private String model;
     private String plateNumber;
+    private double dailyRentPrice;
     private Rent rent;
 
-    public Car(String model, String plateNumber, Rent rent) {
+    public Car(String id, String model, String plateNumber, double dailyRentPrice, Rent rent) {
         this.id = plateNumber;
         this.model = model;
         this.plateNumber = plateNumber;
+        this.dailyRentPrice = dailyRentPrice;
         this.rent = rent;
     }
+
+    public Car(){
+
+    };
 
     public String getId() {
         return id;
@@ -39,34 +45,30 @@ public class Car {
         this.plateNumber = plateNumber;
     }
 
-    public Rent getRent() {
-        return rent;
-    }
+    public double getDailyRentPrice(){ return dailyRentPrice; }
 
-    public void setRent(Rent rent) {
-        this.rent = rent;
-    }
+    public void setDailyRentPrice(double dailyRentPrice){this.dailyRentPrice = dailyRentPrice;}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return id == car.id && Objects.equals(model, car.model) && Objects.equals(plateNumber, car.plateNumber) && rent == car.rent;
-    }
+    public Rent getRent(){ return rent; };
+
+    public void setRent(Rent rent){this.rent = rent;}
+
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, model, plateNumber, rent);
+        return Objects.hash(id, model, plateNumber, dailyRentPrice, rent);
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", model='" + model + '\'' +
                 ", plateNumber='" + plateNumber + '\'' +
-                ", rent=" + rent +
+                ", dailyRentPrice='" + dailyRentPrice + '\'' +
+                ", rent='" + rent + '\'' +
                 '}';
     }
 }
+
