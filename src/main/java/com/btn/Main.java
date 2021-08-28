@@ -30,7 +30,9 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Here are the following options: \n1.add a car to the full list\n2.remove a car from full list\n3.Lists of available cars\n4.Current rented cars 5.Full list of cars.");
+
         int userOption = scanner.nextInt();
 
         switch (userOption){
@@ -56,6 +58,7 @@ public class Main {
                     carRent = Rent.NOTAVAILABLE;
                 }
 
+
                 Car addCar = new Car(carPlateNumber, carModel, carPlateNumber, dailyRentPrice, carRent );
 
                 try{
@@ -74,9 +77,11 @@ public class Main {
 
                 break;
             case 2:
+
                 System.out.println("You want to remove a car");
                 garage.removeCarFromCompany(car2, garage.availableCars);
                 System.out.println(garage.availableCars);
+
                 break;
             case 3:
                 System.out.println("You want a list of available cars");

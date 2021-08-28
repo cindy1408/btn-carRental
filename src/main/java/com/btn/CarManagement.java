@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class CarManagement {
+
     public List<Car> rentedCars = new ArrayList<>();
     public List<Car> availableCars = new ArrayList<>();
+
 
 
     public CarManagement(List<Car> rentedCars, List<Car> availableCars) {
@@ -26,6 +28,7 @@ public class CarManagement {
     public void setRentedCars(List<Car> rentedCars) {
 //        this.rentedCars.add(rentedCars);
     }
+
 
     public List<Car> getAvailableCars() {
         return availableCars;
