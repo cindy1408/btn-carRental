@@ -1,0 +1,7 @@
+Car{id='LB736 3GB', model='Tesla', plateNumber='LB736 3GB', dailyRentPrice=0.0}
+Car{id='KH682 3GB', model='Toyota', plateNumber='KH682 3GB', dailyRentPrice=0.0}
+Car{id='HS863 2GB', model='Tesla', plateNumber='HS863 2GB', dailyRentPrice='49.0'}
+Car{id='H97a 6GB', model='BMW', plateNumber='H97a 6GB', dailyRentPrice='21.0'}
+Car{id='j;asf', model='jasfas', plateNumber='j;asf', dailyRentPrice='28.0'}
+Car{id='i.asfa', model='kjlas', plateNumber='i.asfa', dailyRentPrice='48.0'}
+Car{id='LJ1341 12GB', model='BMW', plateNumber='LJ1341 12GB', dailyRentPrice='32.0'}
