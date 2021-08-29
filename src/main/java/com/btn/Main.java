@@ -1,12 +1,9 @@
 package com.btn;
 
-import javax.swing.text.html.HTMLDocument;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +11,6 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         CarManagement garage = new CarManagement();
-        CarRentalDB fullListCar = new CarRentalDB();
         Rental company = new Rental();
         CarRentalDB database = new CarRentalDB();
 
@@ -124,9 +120,7 @@ public class Main {
                     for(int i = 0; i < garage.availableCars.size(); i++){
                         Car individualCar = garage.availableCars.get(i);
                         if(individualCar.getId().contains(bookCar)){
-                            individualCar.setRent(Rent.RESERVED);
                             company.bookCar(individualCar, garage.rentedCars, garage.availableCars);
-                            System.out.println(individualCar + " has been successfully booked for you.");
                         }
                     }
                 } else {
@@ -136,9 +130,24 @@ public class Main {
                 break;
             case 6:
                 System.out.println("You want to return a car?");
-                company.returnCar(car1, garage.rentedCars, garage.availableCars);
-                car1.setRent(Rent.AVAILABLE);
-                System.out.println(garage.availableCars);
+                scanner.nextLine();
+                String userAns = scanner.nextLine();
+                if(userAns.equalsIgnoreCase("y")){
+                    System.out.println("Here's a list of rented cars");
+                    System.out.println(garage.rentedCars);
+                    System.out.println("Please enter your rented car id");
+                    String carId = scanner.nextLine();
+                    for(int i = 0; i < garage.rentedCars.size(); i++){
+                        Car individualCar = garage.rentedCars.get(i);
+                        if(individualCar.getId().contains(carId)){
+                            company.returnCar(individualCar, garage.rentedCars, garage.availableCars);
+                            System.out.println(garage.availableCars);
+                        }
+                    }
+
+                } else {
+                    System.out.println("No problem, happy renting!");
+                }
                 break;
             case 7:
                 System.out.println("You want a full list of cars");
