@@ -9,8 +9,6 @@ public class CarManagement {
     public List<Car> rentedCars = new ArrayList<>();
     public List<Car> availableCars = new ArrayList<>();
 
-
-
     public CarManagement(List<Car> rentedCars, List<Car> availableCars) {
         this.rentedCars = rentedCars;
         this.availableCars = availableCars;
