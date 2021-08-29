@@ -29,7 +29,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Here are the following options: \n1.add new car to rent out\n2.remove a car if not rented\n3.Lists of available cars\n4.Current rented cars\n 5.Book a car\n6.Return a car\n7.Full list\n8.Add new Car\n9.A car no longer in use?\n");
+        System.out.println("Here are the following options: \n1.add new car to rent out\n2.remove an available car? y/n\n3.Lists of available cars\n4.Current rented cars\n5.Book a car\n6.Return a car\n7.Full list");
 
         int userOption = scanner.nextInt();
 
@@ -39,7 +39,6 @@ public class Main {
                 scanner.nextLine();
                 String carModel = scanner.nextLine();
 
-
                 System.out.println("What is the car plate number?");
                 String carPlateNumber = scanner.nextLine();
 
@@ -47,6 +46,7 @@ public class Main {
                 double dailyRentPrice = scanner.nextInt();
 
                 System.out.println("Is it currently available? y/n");
+                scanner.nextLine();
                 String carAvailability = scanner.nextLine();
 
                 Rent carRent;
@@ -56,9 +56,7 @@ public class Main {
                     carRent = Rent.NOTAVAILABLE;
                 }
 
-
                 Car addCar = new Car(carPlateNumber, carModel, carPlateNumber, dailyRentPrice, carRent );
-
                 try{
                     File carDB = new File("src/carDB.txt");
                     FileWriter myWriter = new FileWriter("carDB.txt", true);
@@ -80,7 +78,7 @@ public class Main {
                 scanner.nextLine();
                 String userInput = scanner.nextLine();
                 if(userInput.equalsIgnoreCase("y")){
-                    System.out.println("Here is a list of cars, which do you want to remove? car id");
+                    System.out.println("Here is a list of available cars, which do you want to remove? car id");
                     System.out.println(garage.availableCars);
                     String carId = scanner.nextLine();
 
@@ -144,7 +142,6 @@ public class Main {
                             System.out.println(garage.availableCars);
                         }
                     }
-
                 } else {
                     System.out.println("No problem, happy renting!");
                 }
@@ -153,23 +150,9 @@ public class Main {
                 System.out.println("You want a full list of cars");
                 database.fullCollection(garage.rentedCars, garage.availableCars);
                 break;
-            case 8:
-                System.out.println("You want to add a car to the full list");
-                database.fullCollection(garage.rentedCars, garage.availableCars);
-                garage.addCarToCompany(car4, database.fullCollection(garage.rentedCars, garage.availableCars));
-            case 9:
-                System.out.println("You want to remove a car to the full list");
-                database.fullCollection(garage.rentedCars, garage.availableCars);
-                garage.removeCarFromCompany(car4, database.fullCollection(garage.rentedCars, garage.availableCars));
 
             default:
                 System.out.println("Please pick between option 1 and 4. ");
         }
-
-
-
-
-
-
     }
 }
