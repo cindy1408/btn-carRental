@@ -1,12 +1,12 @@
-Car{id='LB736 3GB', model='Tesla', plateNumber='LB736 3GB', dailyRentPrice=0.0}
-Car{id='KH682 3GB', model='Toyota', plateNumber='KH682 3GB', dailyRentPrice=0.0}
-Car{id='HS863 2GB', model='Tesla', plateNumber='HS863 2GB', dailyRentPrice='49.0'}
-Car{id='H97a 6GB', model='BMW', plateNumber='H97a 6GB', dailyRentPrice='21.0'}
-Car{id='j;asf', model='jasfas', plateNumber='j;asf', dailyRentPrice='28.0'}
-Car{id='i.asfa', model='kjlas', plateNumber='i.asfa', dailyRentPrice='48.0'}
-Car{id='LJ1341 12GB', model='BMW', plateNumber='LJ1341 12GB', dailyRentPrice='32.0'}
-Car{id='JH867 34GB', model='BMW', plateNumber='JH867 34GB', dailyRentPrice='32.0', rent='NOTAVAILABLE'}
-Car{id='HD971 23GB', model='BMW', plateNumber='HD971 23GB', dailyRentPrice='42.0', rent='AVAILABLE'}
 Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'}Customer: Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HG86149GB'}
 Car{id='LK719 8GB', model='Honda', plateNumber='LK719 8GB', dailyRentPrice='40.0', rent='RESERVED'} RESERVED BY Customer: Customers{firstName='Will', lastName='Burdett', drivingLicence='HSF8712kBG'}
 Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='William', lastName='Burdett', drivingLicence='JHS8912dGB'}
+Car{id='UH8612 3BG', model='BMW', plateNumber='UH8612 3BG', dailyRentPrice='49.0', rent='UNAVAILABLE'}
+Car{id='GH874 23GB', model='Honda', plateNumber='GH874 23GB', dailyRentPrice='10.0', rent='UNAVAILABLE'}
+Car{id='CC9126 23GB', model='Telsa', plateNumber='CC9126 23GB', dailyRentPrice='51.0', rent='AVAILABLE'}
+Car{id='CC6712 23GB', model='Tesla', plateNumber='CC6712 23GB', dailyRentPrice='51.0', rent='AVAILABLE'}
+Car{id='CC6712 23GB', model='Tesla', plateNumber='CC6712 23GB', dailyRentPrice='51.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='GB87126FGGS'}
+Car{id='GM6123 5GB', model='GM', plateNumber='GM6123 5GB', dailyRentPrice='33.0', rent='AVAILABLE'}
+Car{id='GM6123 5GB', model='GM', plateNumber='GM6123 5GB', dailyRentPrice='33.0', rent='RESERVED'} RESERVED BY Customers{firstName='John', lastName='Doe', drivingLicence='john12689142HG'}
+Car{id='FR9712 5GB', model='Ferreri', plateNumber='FR9712 5GB', dailyRentPrice='105.0', rent='AVAILABLE'}
+Car{id='FR9712 5GB', model='Ferreri', plateNumber='FR9712 5GB', dailyRentPrice='105.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy ', lastName='Lou', drivingLicence='CIND8791246GB'}
