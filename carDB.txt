@@ -5,3 +5,5 @@ Car{id='H97a 6GB', model='BMW', plateNumber='H97a 6GB', dailyRentPrice='21.0'}
 Car{id='j;asf', model='jasfas', plateNumber='j;asf', dailyRentPrice='28.0'}
 Car{id='i.asfa', model='kjlas', plateNumber='i.asfa', dailyRentPrice='48.0'}
 Car{id='LJ1341 12GB', model='BMW', plateNumber='LJ1341 12GB', dailyRentPrice='32.0'}
+Car{id='JH867 34GB', model='BMW', plateNumber='JH867 34GB', dailyRentPrice='32.0', rent='NOTAVAILABLE'}
+Car{id='HD971 23GB', model='BMW', plateNumber='HD971 23GB', dailyRentPrice='42.0', rent='AVAILABLE'}
