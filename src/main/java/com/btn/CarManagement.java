@@ -25,8 +25,8 @@ public class CarManagement {
         return rentedCars;
     }
 
-    public void setRentedCars(List<Car> rentedCars) {
-//        this.rentedCars.add(rentedCars);
+    public void setRentedCars(Car rentedCars) {
+        this.rentedCars.add(rentedCars);
     }
 
 
@@ -34,8 +34,8 @@ public class CarManagement {
         return availableCars;
     }
 
-    public void setAvailableCars(List<Car> availableCars) {
-//        this.availableCars.add(availableCars);
+    public void setAvailableCars(Car availableCars) {
+        this.availableCars.add(availableCars);
     }
 
     public void addCarToCompany(Car newCar, List<Car> car){
@@ -47,4 +47,25 @@ public class CarManagement {
         car.remove(newCar);
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CarManagement that = (CarManagement) o;
+        return Objects.equals(rentedCars, that.rentedCars) && Objects.equals(availableCars, that.availableCars);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rentedCars, availableCars);
+    }
+
+    @Override
+    public String toString() {
+        return "CarManagement{" +
+                "rentedCars=" + rentedCars +
+                ", availableCars=" + availableCars +
+                '}';
+    }
 }

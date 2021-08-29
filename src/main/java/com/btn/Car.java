@@ -54,6 +54,13 @@ public class Car {
     public void setRent(Rent rent){this.rent = rent;}
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Double.compare(car.dailyRentPrice, dailyRentPrice) == 0 && Objects.equals(id, car.id) && Objects.equals(model, car.model) && Objects.equals(plateNumber, car.plateNumber) && rent == car.rent;
+    }
 
     @Override
     public int hashCode() {
