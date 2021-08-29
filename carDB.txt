@@ -7,3 +7,6 @@ Car{id='i.asfa', model='kjlas', plateNumber='i.asfa', dailyRentPrice='48.0'}
 Car{id='LJ1341 12GB', model='BMW', plateNumber='LJ1341 12GB', dailyRentPrice='32.0'}
 Car{id='JH867 34GB', model='BMW', plateNumber='JH867 34GB', dailyRentPrice='32.0', rent='NOTAVAILABLE'}
 Car{id='HD971 23GB', model='BMW', plateNumber='HD971 23GB', dailyRentPrice='42.0', rent='AVAILABLE'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'}Customer: Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HG86149GB'}
+Car{id='LK719 8GB', model='Honda', plateNumber='LK719 8GB', dailyRentPrice='40.0', rent='RESERVED'} RESERVED BY Customer: Customers{firstName='Will', lastName='Burdett', drivingLicence='HSF8712kBG'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='William', lastName='Burdett', drivingLicence='JHS8912dGB'}
