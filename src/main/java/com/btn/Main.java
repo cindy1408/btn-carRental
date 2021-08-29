@@ -13,12 +13,13 @@ public class Main {
         CarManagement garage = new CarManagement();
         Rental company = new Rental();
         CarRentalDB database = new CarRentalDB();
+        Customers newCustomer = new Customers();
 
         Car car1 = new Car("", "Tesla", "LB971 3GB", 60, Rent.AVAILABLE);
         Car car2 = new Car("", "BMW", "KJ121 6GB", 45, Rent.AVAILABLE);
         Car car3 = new Car("", "Honda", "LK719 8GB", 40, Rent.AVAILABLE);
-        Car car4 = new Car("", "Toyota", "JA9812 5GB", 40, Rent.NOTAVAILABLE);
-        Car car5 = new Car("", "Mini", "KAH134 9GB", 15, Rent.NOTAVAILABLE);
+        Car car4 = new Car("", "Toyota", "JA9812 5GB", 40, Rent.UNAVAILABLE);
+        Car car5 = new Car("", "Mini", "KAH134 9GB", 15, Rent.UNAVAILABLE);
 
         garage.availableCars.add(car1);
         garage.availableCars.add(car2);
@@ -53,7 +54,7 @@ public class Main {
                 if(carAvailability.trim().equalsIgnoreCase("y")){
                     carRent = Rent.AVAILABLE;
                 } else {
-                    carRent = Rent.NOTAVAILABLE;
+                    carRent = Rent.UNAVAILABLE;
                 }
 
                 Car addCar = new Car(carPlateNumber, carModel, carPlateNumber, dailyRentPrice, carRent );
@@ -86,7 +87,7 @@ public class Main {
                         Car individualCar = garage.availableCars.get(i);
                         if(individualCar.getId().contains(carId)){
                             garage.removeCarFromCompany(individualCar, garage.availableCars);
-                            individualCar.setRent(Rent.NOTAVAILABLE);
+                            individualCar.setRent(Rent.UNAVAILABLE);
                             System.out.println(individualCar + " has been successfully removed!");
                             System.out.println(garage.availableCars);
                         } else {
@@ -111,6 +112,18 @@ public class Main {
                 scanner.nextLine();
                 String user = scanner.nextLine();
                 if(user.equalsIgnoreCase("y")){
+
+                    System.out.println("Please enter your first name");
+                    String firstName = scanner.nextLine();
+
+                    System.out.println("Please enter your last name");
+                    String lastName = scanner.nextLine();
+
+                    System.out.println("Please enter your driving licence");
+                    String drivingLicience = scanner.nextLine();
+
+                    Customers customer = new Customers(firstName, lastName, drivingLicience);
+
                     System.out.println("Here are the list of our current available cars");
                     System.out.println(garage.availableCars);
                     System.out.println("Please enter your desired car id");
@@ -119,8 +132,20 @@ public class Main {
                         Car individualCar = garage.availableCars.get(i);
                         if(individualCar.getId().contains(bookCar)){
                             company.bookCar(individualCar, garage.rentedCars, garage.availableCars);
+                            System.out.println("Thank you " + customer.getFirstName());
+
+                            try{
+                                File carDB = new File("src/carDB.txt");
+                                FileWriter myWriter = new FileWriter("carDB.txt", true);
+                                myWriter.write(String.valueOf(individualCar) + " RESERVED BY " + customer + "\n");
+                                myWriter.close();
+                            } catch (IOException e){
+                                System.out.println("An Error has occurred!");
+                                e.printStackTrace();
+                            }
                         }
                     }
+
                 } else {
                     System.out.println("No problem, have a lovely day!");
                 }
