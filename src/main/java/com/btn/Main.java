@@ -1,9 +1,11 @@
 package com.btn;
 
+import javax.swing.text.html.HTMLDocument;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,7 +33,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Here are the following options: \n1.add a car to the full list\n2.remove a car from full list\n3.Lists of available cars\n4.Current rented cars 5.Full list of cars.");
+        System.out.println("Here are the following options: \n1.add new car to rent out\n2.remove a car if not rented\n3.Lists of available cars\n4.Current rented cars\n 5.Book a car\n6.Return a car\n7.Full list\n8.Add new Car\n9.A car no longer in use?\n");
 
         int userOption = scanner.nextInt();
 
@@ -78,9 +80,28 @@ public class Main {
                 break;
             case 2:
 
-                System.out.println("You want to remove a car");
-                garage.removeCarFromCompany(car2, garage.availableCars);
-                System.out.println(garage.availableCars);
+                System.out.println("You want to remove a car? y/n");
+                scanner.nextLine();
+                String userInput = scanner.nextLine();
+                if(userInput.equalsIgnoreCase("y")){
+                    System.out.println("Here is a list of cars, which do you want to remove? car id");
+                    System.out.println(garage.availableCars);
+                    String carId = scanner.nextLine();
+
+                    for(int i = 0; i < garage.availableCars.size(); i++){
+                        Car individualCar = garage.availableCars.get(i);
+                        if(individualCar.getId().contains(carId)){
+                            garage.removeCarFromCompany(individualCar, garage.availableCars);
+                            individualCar.setRent(Rent.NOTAVAILABLE);
+                            System.out.println(individualCar + " has been successfully removed!");
+                            System.out.println(garage.availableCars);
+                        } else {
+
+                        }
+                    }
+                } else {
+                    System.out.println("No problem, see you soon!");
+                }
 
                 break;
             case 3:
