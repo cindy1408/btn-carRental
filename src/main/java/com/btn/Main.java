@@ -113,11 +113,26 @@ public class Main {
                 System.out.println(garage.rentedCars);
                 break;
             case 5:
-                System.out.println("You want to book a car?");
-                company.bookCar(car1, garage.rentedCars, garage.availableCars);
-                car1.setRent(Rent.NOTAVAILABLE);
-                System.out.println(garage.rentedCars);
-                System.out.println(garage.availableCars);
+                System.out.println("You want to book a car? y/n");
+                scanner.nextLine();
+                String user = scanner.nextLine();
+                if(user.equalsIgnoreCase("y")){
+                    System.out.println("Here are the list of our current available cars");
+                    System.out.println(garage.availableCars);
+                    System.out.println("Please enter your desired car id");
+                    String bookCar = scanner.nextLine();
+                    for(int i = 0; i < garage.availableCars.size(); i++){
+                        Car individualCar = garage.availableCars.get(i);
+                        if(individualCar.getId().contains(bookCar)){
+                            individualCar.setRent(Rent.RESERVED);
+                            company.bookCar(individualCar, garage.rentedCars, garage.availableCars);
+                            System.out.println(individualCar + " has been successfully booked for you.");
+                        }
+                    }
+                } else {
+                    System.out.println("No problem, have a lovely day!");
+                }
+
                 break;
             case 6:
                 System.out.println("You want to return a car?");
