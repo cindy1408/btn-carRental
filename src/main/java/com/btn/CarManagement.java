@@ -18,7 +18,6 @@ public class CarManagement {
 
     };
 
-
     public List<Car> getRentedCars() {
         return rentedCars;
     }
@@ -44,7 +43,6 @@ public class CarManagement {
     public void removeCarFromCompany(Car newCar, List<Car> car){
         car.remove(newCar);
     }
-
 
     @Override
     public boolean equals(Object o) {

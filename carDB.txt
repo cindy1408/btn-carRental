@@ -13,3 +13,28 @@ Car{id='FR9712 5GB', model='Ferreri', plateNumber='FR9712 5GB', dailyRentPrice='
 Car{id='JJJJJJ JJ', model='Tesla', plateNumber='JJJJJJ JJ', dailyRentPrice='105.0', rent='AVAILABLE'}
 Car{id='JJJJJJ JJ', model='Tesla', plateNumber='JJJJJJ JJ', dailyRentPrice='105.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy ', lastName='Cheung', drivingLicence='CCCCC CCC'}
 Car{id='BM9612 34GB', model='Ferrari', plateNumber='BM9612 34GB', dailyRentPrice='124.0', rent='AVAILABLE'}
+Car{id='HA8613 23GB', model='BMW', plateNumber='HA8613 23GB', dailyRentPrice='54.0', rent='AVAILABLE'}
+Car{id='HA7124 23GB', model='BMW', plateNumber='HA7124 23GB', dailyRentPrice='52.0', rent='AVAILABLE'}
+Car{id='TS861 23GB', model='Tesla', plateNumber='TS861 23GB', dailyRentPrice='102.0', rent='AVAILABLE'}
+Car{id='KJ121 6GB', model='BMW', plateNumber='KJ121 6GB', dailyRentPrice='45.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='haksy122J'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='LK87612 34GB'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='LJS6124144H'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HJKS8162894 '}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='JFHA1249 GB'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HGS12479GB'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HSG124789GB'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HFDGA12487G'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='RESERVED'} RESERVED BY Customers{firstName='cindy', lastName='Cheung', drivingLicence='HAS879124gd'}
+Car{id='KJ121 6GB', model='BMW', plateNumber='KJ121 6GB', dailyRentPrice='45.0', rent='AVAILABLE'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HASKJ12GH'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='AVAILABLE'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HJAS8124GB'}
+Car{id='LB971 3GB', model='Tesla', plateNumber='LB971 3GB', dailyRentPrice='60.0', rent='AVAILABLE'} RESERVED BY Customers{firstName='Cindy', lastName='Cheung', drivingLicence='HJSA86124GB'}
+Car{id='GM7513 12GB', model='GM', plateNumber='GM7513 12GB', dailyRentPrice='48.0', rent='AVAILABLE'}
+Car{id='GM61234 23GB', model='GM', plateNumber='GM61234 23GB', dailyRentPrice='48.0', rent='AVAILABLE'}
+Car{id='GM71294 23GB', model='GM', plateNumber='GM71294 23GB', dailyRentPrice='48.0', rent='AVAILABLE'}
+Car{id='FER712 23GB', model='Ferrari', plateNumber='FER712 23GB', dailyRentPrice='152.0', rent='AVAILABLE'}
+Car{id='BM61841 34GB', model='BMW', plateNumber='BM61841 34GB', dailyRentPrice='83.0', rent='UNAVAILABLE'}
+Car{id='HON671 23GB', model='Honda', plateNumber='HON671 23GB', dailyRentPrice='35.0', rent='AVAILABLE'}
+Car{id='HON7612 23GB', model='Honda', plateNumber='HON7612 23GB', dailyRentPrice='34.0', rent='AVAILABLE'}
+Car{id='AAAAAAAAA AA', model='Ferrari', plateNumber='AAAAAAAAA AA', dailyRentPrice='100.0', rent='AVAILABLE'}
+Car{id='ABC 123ABC', model='Range Rover', plateNumber='ABC 123ABC', dailyRentPrice='200.0', rent='UNAVAILABLE'}
+Car{id='GM7812 23GB', model='GM', plateNumber='GM7812 23GB', dailyRentPrice='71.0', rent='AVAILABLE'}
