@@ -45,27 +45,30 @@ public class Start {
                     Rent carRent;
                     if (carAvailability.trim().equalsIgnoreCase("y")) {
                         carRent = Rent.AVAILABLE;
+                        database.carRentalDB_AddingNewCar(carPlateNumber, carModel, carPlateNumber, dailyRentPrice, carRent, null, null);
                     } else {
                         carRent = Rent.UNAVAILABLE;
+                        System.out.println("Renter's first name? ");
+                        String firstName = scanner.nextLine();
+                        System.out.println("Renter's first last name?");
+                        String lastName = scanner.nextLine();
+                        System.out.println("Renter's driving licence?");
+                        String drivingLicence = scanner.nextLine();
+                        Customers customer = new Customers(firstName, lastName, drivingLicence);
+                        database.carRentalDB_AddingNewCar(carPlateNumber, carModel, carPlateNumber, dailyRentPrice, carRent, customer.getFirstName(), customer.getDrivingLicence());
                     }
 
                     Car addCar = new Car(carPlateNumber, carModel, carPlateNumber, dailyRentPrice, carRent);
-                    if(addCar.getRent().equals(Rent.AVAILABLE)){
-                        garage.availableCars.add(addCar);
-                    } else {
-                        garage.rentedCars.add(addCar);
-                    }
+//
                     try {
                         File carDB = new File("src/carDB.txt");
                         FileWriter myWriter = new FileWriter("carDB.txt", true);
                         myWriter.write(String.valueOf(addCar) + "\n");
-//                    System.out.println(addCar + " has been successfully added to our database.");
                         myWriter.close();
                     } catch (IOException e) {
                         System.out.println("An Error has occurred!");
                         e.printStackTrace();
                     }
-                    System.out.println(garage.availableCars);
                     restart(garage, company, database, newCustomer);
                 case 2:
                     System.out.println("You want to remove a car? y/n");
@@ -73,20 +76,10 @@ public class Start {
                     String userInput = scanner.nextLine();
                     if (userInput.equalsIgnoreCase("y")) {
                         System.out.println("Here is a list of available cars, which do you want to remove? car id");
-                        System.out.println(garage.availableCars);
+                        System.out.println(database.carRentalDB_retrieveData(Rent.AVAILABLE));
                         String carId = scanner.nextLine();
+                        database.carRentalDB_deleteRental(carId);
 
-                        for (int i = 0; i < garage.availableCars.size(); i++) {
-                            Car individualCar = garage.availableCars.get(i);
-                            if (individualCar.getId().contains(carId)) {
-                                garage.removeCarFromCompany(individualCar, garage.availableCars);
-                                individualCar.setRent(Rent.UNAVAILABLE);
-                                System.out.println(individualCar + " has been successfully removed!");
-                                System.out.println(garage.availableCars);
-                            } else {
-
-                            }
-                        }
                     } else {
                         System.out.println("No problem, see you soon!");
                     }
@@ -94,30 +87,44 @@ public class Start {
 
                 case 3:
                     System.out.println("You want a list of available cars");
-                    System.out.println(garage.availableCars);
-                    restart(garage, company, database, newCustomer);
-
-                case 4:
-                    System.out.println("You want a list of rented cars");
-                    System.out.println(garage.rentedCars);
-                    restart(garage, company, database, newCustomer);
-                case 5:
-                    System.out.println("You want a full list of cars");
-                    database.fullCollection(garage.rentedCars, garage.availableCars);
+                    System.out.println(database.carRentalDB_retrieveData(Rent.AVAILABLE));
                     System.out.println("Is there anything else you would like to do?y/n");
+                    scanner.nextLine();
                     String help3 = scanner.nextLine();
                     if(help3.equalsIgnoreCase("y")){
                         welcome(garage, company, database, newCustomer);
                     } else {
                         break;
                     }
-                    restart(garage, company, database, newCustomer);
+
+                case 4:
+                    System.out.println("You want a list of rented cars");
+                    System.out.println(database.carRentalDB_retrieveData(Rent.UNAVAILABLE));
+                    System.out.println("Is there anything else you would like to do?y/n");
+                    scanner.nextLine();
+                    String help5 = scanner.nextLine();
+                    if(help5.equalsIgnoreCase("y")){
+                        welcome(garage, company, database, newCustomer);
+                    } else {
+                        break;
+                    }
+                case 5:
+                    System.out.println("You want a full list of cars");
+                    database.carRentalDB_retrieveFullData();
+                    System.out.println("Is there anything else you would like to do?y/n");
+                    scanner.nextLine();
+                    String help4 = scanner.nextLine();
+                    if(help4.equalsIgnoreCase("y")){
+                        welcome(garage, company, database, newCustomer);
+                    } else {
+                        break;
+                    }
                 case 6:
                     System.out.println("Thank you for your time.");
                     break;
                 default:
                     System.out.println("Please enter a valid number.");
-                    restart(garage, company, database, newCustomer);
+                    welcome(garage, company, database, newCustomer);
             }
         } else {
             System.out.println("Here are the following options: \n1.Book a car\n2.Return a car\n3.Exit");
@@ -141,27 +148,10 @@ public class Start {
                         Customers customer = new Customers(firstName, lastName, drivingLicience);
 
                         System.out.println("Here are the list of our current available cars");
-                        System.out.println(garage.availableCars);
+                        System.out.println(database.carRentalDB_retrieveData(Rent.AVAILABLE));
                         System.out.println("Please enter your desired car id");
                         String bookCar = scanner.nextLine();
-                        for (int i = 0; i < garage.availableCars.size(); i++) {
-                            Car individualCar = garage.availableCars.get(i);
-                            if (individualCar.getId().contains(bookCar)) {
-                                company.bookCar(individualCar, garage.rentedCars, garage.availableCars);
-                                System.out.println("Thank you " + customer.getFirstName());
-
-                                try {
-                                    File carDB = new File("src/carDB.txt");
-                                    FileWriter myWriter = new FileWriter("carDB.txt", true);
-                                    myWriter.write(String.valueOf(individualCar) + " RESERVED BY " + customer + "\n");
-                                    myWriter.close();
-                                } catch (IOException e) {
-                                    System.out.println("An Error has occurred!");
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-
+                        database.carRentalDB_updateCustomer(bookCar, customer.getFirstName(), customer.getDrivingLicence());
                     } else {
                         System.out.println("No problem, have a lovely day!");
                     }
@@ -173,16 +163,11 @@ public class Start {
                     String userAns = scanner.nextLine();
                     if (userAns.equalsIgnoreCase("y")) {
                         System.out.println("Here's a list of rented cars");
-                        System.out.println(garage.rentedCars);
+                        System.out.println(database.carRentalDB_retrieveData(Rent.UNAVAILABLE));
                         System.out.println("Please enter your rented car id");
                         String carId = scanner.nextLine();
-                        for (int i = 0; i < garage.rentedCars.size(); i++) {
-                            Car individualCar = garage.rentedCars.get(i);
-                            if (individualCar.getId().contains(carId)) {
-                                company.returnCar(individualCar, garage.rentedCars, garage.availableCars);
-                                System.out.println(garage.availableCars);
-                            }
-                        }
+                        database.carRentalDB_returnRental(carId);
+
                     } else {
                         System.out.println("No problem, happy renting!");
                     }
