@@ -83,6 +83,35 @@ public class CarRentalDB {
         }
     }
 
+    public void carRentalDB_AddingCustomer(String customerId, String firstName, String lastName, String drivingLicence) {
+        String jdbcURL = "jdbc:mysql://localhost:3306/CarRentalDB";
+        String username = "root";
+        String password = "L1Gx2.fr023N.";
+
+        try {
+            Connection connection = DriverManager.getConnection(jdbcURL, username, password);
+
+            String sql1 = "INSERT INTO customer (id, firstName, lastName, drivingLicence)"
+                    + "VALUES (?, ?, ?, ?)";
+
+            PreparedStatement statements = connection.prepareStatement(sql1);
+            statements.setString(1, customerId);
+            statements.setString(2, firstName);
+            statements.setString(3, lastName);
+            statements.setString(4, drivingLicence);
+
+            int rows = statements.executeUpdate();
+            if (rows > 0) {
+                System.out.println("Your data has been successfully added");
+            }
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+
     public String carRentalDB_retrieveData(Rent rent) {
         String jdbcURL = "jdbc:mysql://localhost:3306/CarRentalDB";
         String username = "root";

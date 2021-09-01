@@ -38,3 +38,6 @@ Car{id='HON7612 23GB', model='Honda', plateNumber='HON7612 23GB', dailyRentPrice
 Car{id='AAAAAAAAA AA', model='Ferrari', plateNumber='AAAAAAAAA AA', dailyRentPrice='100.0', rent='AVAILABLE'}
 Car{id='ABC 123ABC', model='Range Rover', plateNumber='ABC 123ABC', dailyRentPrice='200.0', rent='UNAVAILABLE'}
 Car{id='GM7812 23GB', model='GM', plateNumber='GM7812 23GB', dailyRentPrice='71.0', rent='AVAILABLE'}
+Car{id='HON628 54GB', model='Honda', plateNumber='HON628 54GB', dailyRentPrice='36.0', rent='AVAILABLE'}
+Car{id='JE87120 34GB', model='Jeep', plateNumber='JE87120 34GB', dailyRentPrice='48.0', rent='UNAVAILABLE'}
+Car{id='BBBBBBBB BBB', model='Tesla', plateNumber='BBBBBBBB BBB', dailyRentPrice='100.0', rent='UNAVAILABLE'}
