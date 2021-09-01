@@ -55,6 +55,7 @@ public class Start {
                         System.out.println("Renter's driving licence?");
                         String drivingLicence = scanner.nextLine();
                         Customers customer = new Customers(firstName, lastName, drivingLicence);
+                        database.carRentalDB_AddingCustomer(drivingLicence, firstName, lastName, drivingLicence);
                         database.carRentalDB_AddingNewCar(carPlateNumber, carModel, carPlateNumber, dailyRentPrice, carRent, customer.getFirstName(), customer.getDrivingLicence());
                     }
 
@@ -143,15 +144,16 @@ public class Start {
                         String lastName = scanner.nextLine();
 
                         System.out.println("Please enter your driving licence");
-                        String drivingLicience = scanner.nextLine();
+                        String drivingLicence = scanner.nextLine();
 
-                        Customers customer = new Customers(firstName, lastName, drivingLicience);
+                        Customers customer = new Customers(firstName, lastName, drivingLicence);
 
                         System.out.println("Here are the list of our current available cars");
                         System.out.println(database.carRentalDB_retrieveData(Rent.AVAILABLE));
                         System.out.println("Please enter your desired car id");
                         String bookCar = scanner.nextLine();
                         database.carRentalDB_updateCustomer(bookCar, customer.getFirstName(), customer.getDrivingLicence());
+                        database.carRentalDB_AddingCustomer(drivingLicence, firstName, lastName, drivingLicence);
                     } else {
                         System.out.println("No problem, have a lovely day!");
                     }
@@ -167,7 +169,6 @@ public class Start {
                         System.out.println("Please enter your rented car id");
                         String carId = scanner.nextLine();
                         database.carRentalDB_returnRental(carId);
-
                     } else {
                         System.out.println("No problem, happy renting!");
                     }
